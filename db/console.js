@@ -6,8 +6,8 @@ var repl = REPL.start("> ");
 
 // model requirements
 repl.context.user = require("../models/user");
-repl.context.house = require("../models/house");
-repl.context.chore = require("../models/chore");
+// repl.context.house = require("../models/house");
+// repl.context.chore = require("../models/chore");
 
 // listen for an `exit` event
 repl.on("exit", function () {
