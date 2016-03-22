@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var hbs = require('hbs');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
+    mongoose.connect('mongodb://localhost/roommates');
 
 var routes = require('./config/routes');
 

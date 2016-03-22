@@ -2,9 +2,9 @@ var mongoose = require('mongoose'),
     conn = mongoose.connect('mongodb://localhost/roommates'),
     User = require('../models/user.js');
 
-User.remove({}, function(err){
-  if (err) console.log("ERROR: ", err);
-})
+// User.remove({}, function(err){
+//   if (err) console.log("ERROR: ", err);
+// })
 
 var users = [
   {
@@ -21,7 +21,7 @@ var users = [
   }
 ]
 
-User.create(users, function(err, data){
- err ? console.log("ERROR:", err) : console.log("created: ", data)
- mongoose.connection.close();
-})
+// User.create(users, function(err, data){
+//  err ? console.log("ERROR:", err) : console.log("created: ", data)
+//  mongoose.connection.close();
+// })
