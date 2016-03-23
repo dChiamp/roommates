@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var usersController = require("../controllers/usersController");
+var homesController = require("../controllers/homesController")
 
 // LANDING PG
 router.route('/')
@@ -29,12 +30,12 @@ router.route('/api/homes')
   // index for testing
   .get(homesController.indexHomes)
 
-route.route('api/home/:id')
+router.route('api/home/:id')
   .get(homesController.showHome)
   .put(homesController.updateHome)
   .delete(homesController.deleteHome);
 
-route.route('api/home/:id/edit')
-  .get(homesController.edit)
+router.route('api/home/:id/edit')
+  .get(homesController.updateHome)
 
 module.exports = router;
