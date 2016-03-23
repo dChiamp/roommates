@@ -19,7 +19,7 @@ var usersController = {
   createUser: function(req, res) {
   	// get data from user sign up form
   	var email = req.body.email;
-  	User.create({data: email}, function(err){
+  	User.create({email: email}, function(err){
   	  err ? console.log(err) : res.redirect('/');
   	});
   },
