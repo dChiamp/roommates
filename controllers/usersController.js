@@ -1,13 +1,13 @@
 var User = require('../models/user');
 
 var usersController = {
-
   index: function(req, res) {
+    console.log("index");
     // res.render('index', { title: 'Happy Housemates' });
-    User.find({}, function(err,data){
+    User.find({}, function(err, data){
+      console.log(" hey from isnide user find");
       err ? console.log(err) : res.send({data});
     });
-
   },
   showUser: function(req, res) {
   	var id = req.params.id;
@@ -45,7 +45,7 @@ var usersController = {
 
 	},
 
-	update: function(req, res) {
+	updateUser: function(req, res) {
   	var id = req.params.id;
   	User.find({_id: id, function(err, user) {
   		if (err){
