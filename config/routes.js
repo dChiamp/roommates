@@ -9,6 +9,14 @@ var usersController = require("../controllers/usersController")
 // });
 
 router.route('/')
-  .get(usersController.index)
+  .get(usersController.index);
+
+
+router.route('/api/users/:id')
+	.put(usersController.update);
+
+router.route('/api/users/:id/edit')
+	.get(usersController.edit);
+
 
 module.exports = router;
