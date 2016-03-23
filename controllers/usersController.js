@@ -4,15 +4,15 @@ var usersController = {
   index: function(req, res) {
     console.log("index");
     // res.render('index', { title: 'Happy Housemates' });
-    User.find({}, function(err, data){
+    User.find({}, function(err, users){
       console.log(" hey from isnide user find");
-      err ? console.log(err) : res.send({data});
+      err ? console.log(err) : res.render('user/index', {users});
     });
   },
   showUser: function(req, res) {
   	var id = req.params.id;
-  	User.findById({_id: id}, function(err, data){
-  	  err ? console.log(err) : res.render('show', {data});
+  	User.findById({_id: id}, function(err, user){
+  	  err ? console.log(err) : res.render('user/show', {user});
   	});
   },
 
@@ -39,7 +39,7 @@ var usersController = {
 				res.status(500).send();
 				console.log("Could not find the user. Error:", err);
 			} else {
-				// res.render(./pages/edit_user, {user: user[0]}); edit as needed once views are made
+				res.render('users/update', {user: user});
 			}
 		}});
 
