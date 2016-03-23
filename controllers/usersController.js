@@ -7,8 +7,27 @@ var usersController = {
       // err ? console.log(err) : res.json(users);
     // })
   },
+  showUser: function(req, res) {
+  	var id = req.params.id;
+  	User.findById({_id: id}, function(err, data){
+  	  err ? console.log(err) : res.render('show', {data});
+  	});
+  },
 
+  createUser: function(req, res) {
+  	// get data from user sign up form
+  	var email = req.body.email;
+  	User.create({data: email}, function(err){
+  	  err ? console.log(err) : res.redirect('/');
+  	});
+  },
 
+  deleteUser: function(req, res) {
+  	var id = req.params.id;
+  	User.remove({_id: id}, function(err, data){
+  		err ? console.log(err) : res.redirect('/');
+  	});
+  },
 
 	edit: function(req, res) {
 		var id = req.params.id;
@@ -41,7 +60,8 @@ var usersController = {
   			res.json(updatedUser);
   		});
   	}});
-  }
+ 	},
+
 };
 
 module.exports = usersController;
