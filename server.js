@@ -8,6 +8,8 @@ var hbs = require('hbs');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 
+mongoose.connect("mongodb://localhost/roomates");
+
 var routes = require('./config/routes');
 
 
