@@ -7,7 +7,7 @@ var HomeSchema = new Schema ({
     type: Schema.Types.ObjectId,
     ref: 'User'
    }]
-})
+});
 
 var Home = mongoose.model('Home', HomeSchema);
 module.exports = Home;
